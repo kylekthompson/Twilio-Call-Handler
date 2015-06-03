@@ -1,7 +1,7 @@
 require 'sinatra'
 require 'twilio-ruby'
 
-get '/test' do
+get '/' do
   Twilio::TwiML::Response.new do |r|
   	r.Gather :numDigits => '1', :action => '/test/handle-gather', :method => 'get' do |g|
   		g.Say 'You have reached Optimum Anesthesia. For requests for proposals or sales, press 1. For all other inquires, press 2. To hear this message again, press 9.'
@@ -9,7 +9,7 @@ get '/test' do
   end
 end
 
-get '/test/handle-gather' do
+get '/handle-gather' do
 	redirect '/test' unless params['Digits'] == ('1' || '2')
 	Twilio::TwiML::Response.new do |r|
 		r.Say 'Please wait while we connect you.'

@@ -10,13 +10,13 @@ get '/' do
 end
 
 get '/handle-gather' do
-	redirect '/test' unless params['Digits'] == ('1' || '2')
+	redirect '/' unless params['Digits'] == ('1' || '2')
 	Twilio::TwiML::Response.new do |r|
 		r.Say 'Please wait while we connect you.'
 		if params['Digits'] == '1'
-			r.Dial '+13305197372', :record => 'record-from-start', :action => '/test/send-recording'
+			r.Dial '+13305197372', :record => 'record-from-start', :action => '/send-recording.php'
 		elsif params['Digits'] == '2'
-			r.Dial '+13302865330', :record => 'record-from-start', :action => '/test/send-recording'
+			r.Dial '+13302865330', :record => 'record-from-start', :action => '/send-recording.php'
 		end
 	end
 end

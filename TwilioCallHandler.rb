@@ -4,7 +4,7 @@ require 'twilio-ruby'
 get '/' do
 	Twilio::TwiML::Response.new do |r|
   	r.Gather :numDigits => '1', :action => '/handle-gather', :method => 'get' do |g|
-  		g.Say 'You have reached Optimum Anesthesia. For requests for proposals or sales, press 1. For all other inquires, press 2. To hear this message again, press 9.'
+  		g.Say 'You have reached Optimum Anesthesia. For requests for proposals or sales, press 1. For all other inquires, press 2. To hear this message again, press any other number.'
   	end
   end.text
 end

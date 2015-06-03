@@ -9,7 +9,7 @@ echo '<Response></Response>'; //Place the desired response (if any) here
 /**
  * This section actually sends the email.
  */
-$to      = "christopher@onlyoptimum.com"; // Your email address
+$to      = "kyle@kylekthompson.com"; // Your email address
 $subject = "Recording Received! (Optimum Anesthesia Phone Service)";
 $message = "You have received a recording of a phone call through your phone service.
 Phone Call Status: {$_REQUEST['DialCallStatus']}

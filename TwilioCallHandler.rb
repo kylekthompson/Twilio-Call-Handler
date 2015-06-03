@@ -2,7 +2,7 @@ require 'sinatra'
 require 'twilio-ruby'
 
 get '/' do
-  Twilio::TwiML::Response.new do |r|
+	Twilio::TwiML::Response.new do |r|
   	r.Gather :numDigits => '1', :action => '/test/handle-gather', :method => 'get' do |g|
   		g.Say 'You have reached Optimum Anesthesia. For requests for proposals or sales, press 1. For all other inquires, press 2. To hear this message again, press 9.'
   	end

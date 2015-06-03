@@ -14,9 +14,13 @@ get '/optimum-voice-handle-gather' do
 	Twilio::TwiML::Response.new do |r|
 		r.Say 'Please wait while we connect you.'
 		if params['Digits'] == '1'
-			r.Dial '+13307740777', :record => 'record-from-ringing', :action => 'https://twilio-call-handler.herokuapp.com/optimum-send-recording.php'
+			r.Dial '+13307740777', :record => 'record-from-ringing', :action => '/optimum-voice-send-recording'
 		elsif params['Digits'] == '2'
-			r.Dial '+13302865330', :record => 'record-from-ringing', :action => 'https://twilio-call-handler.herokuapp.com/optimum-send-recording.php'
+			r.Dial '+13302865330', :record => 'record-from-ringing', :action => '/optimum-voice-send-recording'
 		end
 	end.text
+end
+
+get '/optimum-voice-send-recording' do
+	send_file 'optimum-voice-send-recording.php'
 end

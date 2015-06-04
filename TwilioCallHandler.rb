@@ -18,6 +18,5 @@ get '/optimum-voice-handle-gather' do
 		elsif params['Digits'] == '2'
 			r.Dial '+13302865330', :record => 'record-from-ringing', :action => 'https://www.kylekthompson.com/optimum/optimum-voice-send-recording.php'
 		end
-		r.Hangup
 	end.text
 end

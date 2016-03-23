@@ -14,9 +14,9 @@ get '/optimum-voice-handle-gather' do
 	Twilio::TwiML::Response.new do |r|
 		r.Say 'Please wait while we connect you. Please note that this call will be recorded for quality assurance.'
 		if params['Digits'] == '1'
-			r.Dial '+13305197372', :record => 'record-from-ringing', :action => 'https://www.kylekthompson.com/optimum/optimum-voice-send-recording.php'
+			r.Dial '+13305197372', :record => 'record-from-ringing', :action => 'http://www.kylekthompson.com/optimumanesthesiaservices.com/optimum-voice-send-recording.php'
 		elsif params['Digits'] == '2'
-			r.Dial '+13302865330', :record => 'record-from-ringing', :action => 'https://www.kylekthompson.com/optimum/optimum-voice-send-recording.php'
+			r.Dial '+13302865330', :record => 'record-from-ringing', :action => 'https://www.kylekthompson.com/optimumanesthesiaservices.com/optimum-voice-send-recording.php'
 		end
 	end.text
 end

@@ -87,8 +87,8 @@ get '/sms/mvas' do
     Body: #{params['Body']}
   BODY
 
-  from = SendGrid::Email.new(email: 'webmaster@onlyoptimum.com')
-  to = SendGrid::Email.new(email: 'christopher@onlyoptimum.com')
+  from = SendGrid::Email.new(email: 'webmaster@mvasinc.com')
+  to = SendGrid::Email.new(email: 'cthompson@mvasinc.com')
   subject = 'Text Received! (MVAS Phone Service)'
   content = SendGrid::Content.new(type: 'text/plain', value: body)
   mail = SendGrid::Mail.new(from, subject, to, content)

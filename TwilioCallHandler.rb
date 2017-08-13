@@ -40,9 +40,12 @@ get '/voice/optimum/handle_gather' do
     r.say('Please wait while we connect you.')
     r.say('Please note that this call will be recorded for quality assurance.')
 
-    phone_number = params['Digits'] == '1'
-      ? '+13305388385'
-      : '+13302865330'
+    phone_number =
+      if params['Digits'] == '1'
+        '+13305388385'
+      else
+        '+13302865330'
+      end
 
     r.dial(
       number: phone_number,
@@ -115,9 +118,12 @@ get '/voice/mvas/handle_gather' do
     r.say('Please wait while we connect you.')
     r.say('Please note that this call will be recorded for quality assurance.')
 
-    phone_number = params['Digits'] == '1'
-      ? '+13305197372'
-      : '+13302865330'
+    phone_number =
+      if params['Digits'] == '1'
+        '+13305197372'
+      else
+        '+13302865330'
+      end
 
     r.dial(
       number: phone_number,

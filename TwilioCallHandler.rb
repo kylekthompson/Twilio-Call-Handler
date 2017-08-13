@@ -134,6 +134,7 @@ get '/voice/mvas/handle_gather' do
 end
 
 post '/voice/mvas/send_voice_recording' do
+  if params['RecordingUrl']
     body = <<~BODY
       You have received a recording of a phone call through your phone service.
       \n\n

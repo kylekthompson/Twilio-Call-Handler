@@ -10,7 +10,7 @@ get '/sms/optimum' do
   BODY
 
   from = SendGrid::Email.new(email: 'webmaster@onlyoptimum.com')
-  to = SendGrid::Email.new(email: 'christopher@onlyoptimum.com,kyle@kylekthompson.com')
+  to = SendGrid::Email.new(email: 'christopher@onlyoptimum.com')
   subject = 'Text Received! (Optimum Anesthesia Phone Service)'
   content = SendGrid::Content.new(type: 'text/plain', value: body)
   mail = SendGrid::Mail.new(from, subject, to, content)
@@ -66,7 +66,7 @@ post '/voice/optimum/send_voice_recording' do
     BODY
 
     from = SendGrid::Email.new(email: 'webmaster@onlyoptimum.com')
-    to = SendGrid::Email.new(email: 'christopher@onlyoptimum.com,kyle@kylekthompson.com')
+    to = SendGrid::Email.new(email: 'christopher@onlyoptimum.com')
     subject = 'Recording Received! (Optimum Anesthesia Phone Service)'
     content = SendGrid::Content.new(type: 'text/plain', value: body)
     mail = SendGrid::Mail.new(from, subject, to, content)
@@ -88,7 +88,7 @@ get '/sms/mvas' do
   BODY
 
   from = SendGrid::Email.new(email: 'webmaster@onlyoptimum.com')
-  to = SendGrid::Email.new(email: 'christopher@onlyoptimum.com,kyle@kylekthompson.com')
+  to = SendGrid::Email.new(email: 'christopher@onlyoptimum.com')
   subject = 'Text Received! (MVAS Phone Service)'
   content = SendGrid::Content.new(type: 'text/plain', value: body)
   mail = SendGrid::Mail.new(from, subject, to, content)
@@ -144,7 +144,7 @@ post '/voice/mvas/send_voice_recording' do
     BODY
 
     from = SendGrid::Email.new(email: 'webmaster@mvasinc.com')
-    to = SendGrid::Email.new(email: 'cthompson@mvasinc.com,kyle@kylekthompson.com')
+    to = SendGrid::Email.new(email: 'cthompson@mvasinc.com')
     subject = 'Recording Received! (MVAS Phone Service)'
     content = SendGrid::Content.new(type: 'text/plain', value: body)
     mail = SendGrid::Mail.new(from, subject, to, content)

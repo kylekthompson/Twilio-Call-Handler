@@ -29,9 +29,9 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  sendgrid-ruby
-  sinatra
-  twilio-ruby
+  sendgrid-ruby (= 5.0.0)
+  sinatra (= 2.0.0)
+  twilio-ruby (= 5.1.1)
 
 RUBY VERSION
    ruby 2.4.1p111

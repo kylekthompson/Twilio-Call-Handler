@@ -8,6 +8,9 @@ GEM
     multipart-post (2.3.0)
     mustermann (1.1.2)
       ruby2_keywords (~> 0.0.1)
+    nio4r (2.5.9)
+    puma (6.2.2)
+      nio4r (~> 2.0)
     rack (2.2.6.4)
     rack-protection (2.1.0)
       rack
@@ -32,6 +35,7 @@ PLATFORMS
   x86_64-linux
 
 DEPENDENCIES
+  puma
   sendgrid-ruby (= 5.0.0)
   sinatra (= 2.1.0)
   twilio-ruby (= 5.1.1)
